@@ -1,0 +1,566 @@
+/* ========================================
+   TaskNest - Calendar Page Styles
+======================================== */
+
+.calendar-page {
+    padding: 0 15px 30px;
+    width: 100%;
+}
+
+/* ========================================
+   Page Header
+======================================== */
+
+.calendar-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
+.calendar-page-header h1 {
+    font-size: 28px;
+    color: #32105e;
+    font-weight: 700;
+}
+
+.calendar-page-header h1 span {
+    color: #873bd8;
+}
+
+.calendar-page-header p {
+    color: #898398;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.calendar-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendar-today-btn {
+    padding: 10px 18px;
+    border-radius: 22px;
+    border: 1.5px solid #dfd0fa;
+    background: #ffffff;
+    color: #873bd8;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.calendar-today-btn:hover {
+    background: #f4efff;
+    border-color: #873bd8;
+}
+
+.calendar-add-btn {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #421078, #873bd8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.calendar-add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(135, 59, 216, 0.25);
+}
+
+
+/* ========================================
+   Main Workspace Layout
+======================================== */
+
+.calendar-workspace {
+    display: grid;
+    grid-template-columns: 1.75fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+
+/* ========================================
+   Monthly Calendar Board Card
+======================================== */
+
+.calendar-board-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(50, 16, 94, 0.04);
+}
+
+.calendar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.calendar-nav h2 {
+    font-size: 20px;
+    color: #32105e;
+    font-weight: 700;
+    min-width: 165px;
+    text-align: center;
+}
+
+.month-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    border: 1px solid #ece3fc;
+    background: #faf8ff;
+    color: #873bd8;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.month-nav-btn:hover {
+    background: #873bd8;
+    color: #ffffff;
+    border-color: #873bd8;
+}
+
+.priority-legend {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #faf8ff;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1px solid #f0eafa;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #5b5270;
+    font-weight: 500;
+}
+
+.priority-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.priority-dot.high {
+    background: #ef4444;
+}
+
+.priority-dot.medium {
+    background: #f59e0b;
+}
+
+.priority-dot.low {
+    background: #10b981;
+}
+
+
+/* ========================================
+   Weekday Headers & Calendar Grid
+======================================== */
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.calendar-weekdays span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #898398;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.calendar-day {
+    min-height: 84px;
+    padding: 10px;
+    border-radius: 16px;
+    background: #faf8ff;
+    border: 1.5px solid #f0eafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background: #f3ecff;
+    border-color: #d6c0fa;
+    transform: translateY(-2px);
+}
+
+.calendar-day.other-month {
+    background: #f8f7fa;
+    border-color: transparent;
+    opacity: 0.48;
+}
+
+.calendar-day.other-month:hover {
+    opacity: 0.8;
+}
+
+.day-number-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: 700;
+    color: #32105e;
+}
+
+.day-task-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    background: #ece3fc;
+    color: #873bd8;
+}
+
+/* Today Highlight */
+
+.calendar-day.today {
+    border-color: #873bd8;
+    background: #f5effe;
+}
+
+.calendar-day.today .day-number {
+    color: #873bd8;
+}
+
+/* Selected Date Highlight */
+
+.calendar-day.selected {
+    background: linear-gradient(135deg, #4f168e, #873bd8);
+    border-color: #873bd8;
+    box-shadow: 0 6px 16px rgba(135, 59, 216, 0.25);
+}
+
+.calendar-day.selected .day-number {
+    color: #ffffff;
+}
+
+.calendar-day.selected .day-task-badge {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+/* Priority Dots & Task Preview inside Day Cell */
+
+.day-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.day-dots-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.day-task-preview {
+    font-size: 11px;
+    color: #5b5270;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendar-day.selected .day-task-preview {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ========================================
+   Selected Date Details Card
+======================================== */
+
+.calendar-details-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 24px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(50, 16, 94, 0.04);
+}
+
+.details-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0eaf7;
+}
+
+.details-subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #873bd8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.details-card-header h2 {
+    font-size: 19px;
+    color: #32105e;
+    margin-top: 4px;
+}
+
+.selected-count-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #f2edff;
+    color: #873bd8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.selected-tasks-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 18px 0;
+    max-height: 410px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Task Item inside Selected Day Panel */
+
+.calendar-task-card {
+    padding: 14px;
+    border-radius: 16px;
+    background: #faf8ff;
+    border: 1px solid #f0eafa;
+    transition: 0.2s ease;
+}
+
+.calendar-task-card:hover {
+    background: #f4efff;
+    border-color: #dfd0fa;
+}
+
+.calendar-task-card.completed {
+    opacity: 0.68;
+    background: #f7f7f9;
+}
+
+.calendar-task-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.calendar-task-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #32105e;
+    line-height: 1.4;
+}
+
+.calendar-task-card.completed .calendar-task-title {
+    text-decoration: line-through;
+    color: #898398;
+}
+
+.calendar-task-desc {
+    font-size: 12px;
+    color: #7d768c;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.calendar-task-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.calendar-task-tags {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.cal-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 12px;
+}
+
+.cal-tag.category {
+    background: #ece3fc;
+    color: #873bd8;
+}
+
+.cal-tag.priority-high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.cal-tag.priority-medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.cal-tag.priority-low {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.cal-tag.time {
+    background: #ffffff;
+    color: #5b5270;
+    border: 1px solid #e6def5;
+}
+
+.cal-toggle-btn {
+    padding: 5px 11px;
+    border-radius: 12px;
+    border: 1px solid #d8c6fa;
+    background: #ffffff;
+    color: #873bd8;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cal-toggle-btn:hover {
+    background: #873bd8;
+    color: #ffffff;
+    border-color: #873bd8;
+}
+
+.calendar-empty-state {
+    text-align: center;
+    padding: 40px 16px;
+    color: #898398;
+    font-size: 13px;
+    background: #faf8ff;
+    border-radius: 16px;
+    border: 1px dashed #dfd0fa;
+}
+
+.details-card-footer {
+    padding-top: 12px;
+    border-top: 1px solid #f0eaf7;
+}
+
+.manage-tasks-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #421078, #873bd8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.manage-tasks-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 30, 160, 0.2);
+}
+
+
+/* ========================================
+   Responsive Design
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .calendar-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-details-card {
+        min-height: auto;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .calendar-board-card,
+    .calendar-details-card {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .calendar-day {
+        min-height: 62px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .day-task-preview {
+        display: none;
+    }
+
+    .calendar-nav h2 {
+        font-size: 17px;
+        min-width: 135px;
+    }
+
+}

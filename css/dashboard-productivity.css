@@ -1,0 +1,263 @@
+/* Productivity Section */
+
+.productivity-section {
+    display: grid;
+    grid-template-columns: 1.9fr 1fr;
+    gap: 20px;
+    margin: 0 15px 15px;
+}
+
+/* Categories Panel */
+
+.categories-panel {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 25px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2,
+.timer-heading h2 {
+    color: #32105e;
+    font-size: 24px;
+}
+
+.section-heading h2 span,
+.timer-heading h2 span {
+    color: #873bd8;
+}
+
+.section-heading p,
+.timer-heading p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.category-add-btn {
+    border: 2px solid #873bd8;
+    color: #873bd8;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.category-add-btn:hover {
+    background: #f4e9ff;
+}
+
+/* Category Cards */
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background: #f0dafa;
+    border-radius: 18px;
+    padding: 18px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.category-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.work-icon {
+    background: #e5c4fa;
+}
+
+.personal-icon {
+    background: #d9c8f5;
+}
+
+.study-icon {
+    background: #e8c8ef;
+}
+
+.category-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.category-info h3 {
+    font-size: 15px;
+    color: #32105e;
+}
+
+.category-info p {
+    font-size: 11px;
+    color: #873bd8;
+    margin: 5px 0;
+}
+
+.category-progress {
+    width: 100%;
+    height: 7px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.work-progress {
+    background: linear-gradient(90deg, #873bd8, #b66aee);
+}
+
+.personal-progress {
+    background: linear-gradient(90deg, #8652c7, #b58be8);
+}
+
+.study-progress {
+    background: linear-gradient(90deg, #a44acb, #d18be5);
+}
+
+.category-percentage {
+    font-size: 11px;
+    color: #873bd8;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Timer Panel */
+
+.timer-panel {
+    min-height: 240px;
+    border-radius: 28px;
+    padding: 25px;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 75%, #8d20cb 0%, transparent 40%),
+        linear-gradient(135deg, #260047, #500080, #31004f);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.timer-heading h2 {
+    color: white;
+    font-size: 22px;
+}
+
+.timer-heading h2 span {
+    color: #d59aff;
+}
+
+.timer-heading p {
+    color: #dfc4f3;
+}
+
+.timer-display {
+    text-align: center;
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 15px 0 5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-status {
+    text-align: center;
+    font-size: 12px;
+    color: #e1c5f5;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.timer-btn {
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 50%;
+    font-size: 19px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.timer-btn:hover {
+    transform: scale(1.1);
+}
+
+.start-btn {
+    background: white;
+    color: #542080;
+}
+
+.pause-btn {
+    background: #f0dafa;
+    color: #542080;
+}
+
+.reset-btn {
+    background: #ef4848;
+    color: white;
+}
+
+.timer-labels {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 7px;
+    font-size: 10px;
+    color: #e1c5f5;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+
+    .productivity-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .category-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .timer-panel {
+        min-height: 260px;
+    }
+
+}

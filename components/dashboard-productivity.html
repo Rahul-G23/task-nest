@@ -1,0 +1,112 @@
+<section class="productivity-section">
+
+    <!-- Task Categories -->
+    <div class="categories-panel">
+
+        <div class="section-heading">
+            <div>
+                <h2>Task <span>Categories</span></h2>
+                <p>Organize your work efficiently.</p>
+            </div>
+
+            <button class="category-add-btn" id="addCategoryBtn">
+                + Add Category
+            </button>
+        </div>
+
+        <div class="category-list">
+
+            <!-- Work -->
+            <div class="category-card">
+                <div class="category-icon work-icon">💼</div>
+
+                <div class="category-info">
+                    <h3>Work</h3>
+                    <p><span id="workTaskCount">0</span> tasks</p>
+
+                    <div class="category-progress">
+                        <div class="progress-fill work-progress" id="workProgress"></div>
+                    </div>
+                </div>
+
+                <span class="category-percentage" id="workPercentage">0%</span>
+            </div>
+
+            <!-- Personal -->
+            <div class="category-card">
+                <div class="category-icon personal-icon">🌱</div>
+
+                <div class="category-info">
+                    <h3>Personal</h3>
+                    <p><span id="personalTaskCount">0</span> tasks</p>
+
+                    <div class="category-progress">
+                        <div class="progress-fill personal-progress" id="personalProgress"></div>
+                    </div>
+                </div>
+
+                <span class="category-percentage" id="personalPercentage">0%</span>
+            </div>
+
+            <!-- Study -->
+            <div class="category-card">
+                <div class="category-icon study-icon">📚</div>
+
+                <div class="category-info">
+                    <h3>Study</h3>
+                    <p><span id="studyTaskCount">0</span> tasks</p>
+
+                    <div class="category-progress">
+                        <div class="progress-fill study-progress" id="studyProgress"></div>
+                    </div>
+                </div>
+
+                <span class="category-percentage" id="studyPercentage">0%</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Productivity Timer -->
+    <div class="timer-panel">
+
+        <div class="timer-heading">
+            <h2>Daily <span>Productivity</span></h2>
+            <p>Focus on what matters.</p>
+        </div>
+
+        <div class="timer-display" id="timerDisplay">
+            00:00:00
+        </div>
+
+        <p class="timer-status" id="timerStatus">
+            Ready to focus?
+        </p>
+
+        <div class="timer-controls">
+
+            <button class="timer-btn start-btn" id="startTimer">
+                ▶
+            </button>
+
+            <button class="timer-btn pause-btn" id="pauseTimer">
+                ||
+            </button>
+
+            <button class="timer-btn reset-btn" id="resetTimer">
+                ↻
+            </button>
+
+        </div>
+
+        <div class="timer-labels">
+            <span>Start</span>
+            <span>Pause</span>
+            <span>Reset</span>
+        </div>
+
+    </div>
+
+</section>

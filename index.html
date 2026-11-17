@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskNest | Sign In</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-card">
+
+            <!-- Left Branding Panel -->
+            <div class="auth-brand-panel">
+
+                <div class="auth-logo">
+                    <div class="auth-logo-icon">T</div>
+                    <h2>TaskNest<span>.</span></h2>
+                </div>
+
+                <div class="auth-hero-copy">
+                    <span class="auth-pill">SMART PRODUCTIVITY TRACKER</span>
+                    <h1>Organize your work. Master your focus.</h1>
+                    <p>
+                        Plan daily tasks, visualize due dates on your calendar, and track category-wise progress from
+                        one clean workspace.
+                    </p>
+                </div>
+
+                <div class="auth-features">
+                    <div class="auth-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Priority & category-based task management</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Interactive weekly & category analytics</span>
+                    </div>
+                    <div class="auth-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Monthly due-date calendar & focus timer</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Right Authentication Form Panel -->
+            <div class="auth-form-panel">
+
+                <div class="auth-tabs">
+                    <button type="button" class="auth-tab active" id="loginTabBtn">
+                        Sign In
+                    </button>
+                    <button type="button" class="auth-tab" id="signupTabBtn">
+                        Create Account
+                    </button>
+                </div>
+
+                <div class="auth-form-header">
+                    <h2 id="authHeading">Welcome back</h2>
+                    <p id="authSubheading">Sign in to access your TaskNest workspace.</p>
+                </div>
+
+                <div class="auth-message" id="authMessage" role="alert"></div>
+
+                <form class="auth-form" id="authForm" novalidate>
+
+                    <div class="auth-field hidden" id="nameFieldGroup">
+                        <label for="authName">Full Name</label>
+                        <input type="text" id="authName" placeholder="e.g. Rahul G" autocomplete="name">
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="authEmail">Email Address</label>
+                        <input type="email" id="authEmail" placeholder="you@example.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="authPassword">Password</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="authPassword" placeholder="Enter your password"
+                                autocomplete="current-password" required>
+                            <button type="button" class="toggle-password-btn" id="togglePasswordBtn">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn" id="authSubmitBtn">
+                        Sign In to Dashboard
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+    <script>
+        // Redirect immediately if already logged in
+        redirectIfAuthenticated();
+
+        let authMode = "login";
+
+        const loginTabBtn = document.getElementById("loginTabBtn");
+        const signupTabBtn = document.getElementById("signupTabBtn");
+        const nameFieldGroup = document.getElementById("nameFieldGroup");
+        const authNameInput = document.getElementById("authName");
+        const authEmailInput = document.getElementById("authEmail");
+        const authPasswordInput = document.getElementById("authPassword");
+        const authHeading = document.getElementById("authHeading");
+        const authSubheading = document.getElementById("authSubheading");
+        const authSubmitBtn = document.getElementById("authSubmitBtn");
+        const authMessage = document.getElementById("authMessage");
+        const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+        const authForm = document.getElementById("authForm");
+
+        function clearAuthMessage() {
+            authMessage.textContent = "";
+            authMessage.className = "auth-message";
+        }
+
+        function showAuthMessage(text, type) {
+            authMessage.textContent = text;
+            authMessage.className = `auth-message ${type}`;
+        }
+
+        function switchAuthMode(mode) {
+            authMode = mode;
+            clearAuthMessage();
+
+            if (mode === "signup") {
+                signupTabBtn.classList.add("active");
+                loginTabBtn.classList.remove("active");
+                nameFieldGroup.classList.remove("hidden");
+                authNameInput.setAttribute("required", "required");
+                authHeading.textContent = "Create your account";
+                authSubheading.textContent = "Start tracking your tasks and productivity today.";
+                authSubmitBtn.textContent = "Create Account";
+                authPasswordInput.setAttribute("autocomplete", "new-password");
+            } else {
+                loginTabBtn.classList.add("active");
+                signupTabBtn.classList.remove("active");
+                nameFieldGroup.classList.add("hidden");
+                authNameInput.removeAttribute("required");
+                authHeading.textContent = "Welcome back";
+                authSubheading.textContent = "Sign in to access your TaskNest workspace.";
+                authSubmitBtn.textContent = "Sign In to Dashboard";
+                authPasswordInput.setAttribute("autocomplete", "current-password");
+            }
+        }
+
+        loginTabBtn.addEventListener("click", () => switchAuthMode("login"));
+        signupTabBtn.addEventListener("click", () => switchAuthMode("signup"));
+
+        togglePasswordBtn.addEventListener("click", () => {
+            const isHidden = authPasswordInput.type === "password";
+            authPasswordInput.type = isHidden ? "text" : "password";
+            togglePasswordBtn.textContent = isHidden ? "Hide" : "Show";
+        });
+
+        authForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            clearAuthMessage();
+
+            const name = authNameInput.value;
+            const email = authEmailInput.value;
+            const password = authPasswordInput.value;
+
+            const result = authMode === "signup"
+                ? registerUser(name, email, password)
+                : loginUser(email, password);
+
+            if (!result.success) {
+                showAuthMessage(result.message, "error");
+                return;
+            }
+
+            showAuthMessage("Success! Redirecting to your dashboard...", "success");
+            setTimeout(() => {
+                window.location.href = getDashboardPageUrl();
+            }, 450);
+        });
+    </script>
+
+</body>
+
+</html>

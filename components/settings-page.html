@@ -1,0 +1,171 @@
+<!-- ========================================
+     TaskNest - Settings & Data Management
+======================================== -->
+
+<section class="settings-page">
+
+    <!-- Page Top Bar -->
+    <div class="settings-page-header">
+        <div>
+            <h1>Account <span>Settings</span></h1>
+            <p>Manage your profile details, productivity defaults, and LocalStorage task backups.</p>
+        </div>
+    </div>
+
+    <!-- Status Notification Banner -->
+    <div class="settings-banner" id="settingsBanner" role="alert"></div>
+
+
+    <!-- Top Settings Grid -->
+    <div class="settings-grid">
+
+        <!-- Card 1: Profile & Security -->
+        <div class="settings-card">
+
+            <div class="settings-card-header">
+                <h2>Profile & Security</h2>
+                <p>Update your display name or change your account password.</p>
+            </div>
+
+            <form class="settings-form" id="profileSettingsForm">
+
+                <div class="settings-field">
+                    <label for="settingsNameInput">Display Name</label>
+                    <input type="text" id="settingsNameInput" placeholder="Your name" required>
+                </div>
+
+                <div class="settings-field">
+                    <label for="settingsEmailInput">Account Email</label>
+                    <input type="email" id="settingsEmailInput" disabled>
+                    <span class="field-hint">Email is used to isolate your personal task storage.</span>
+                </div>
+
+                <div class="settings-divider"></div>
+
+                <div class="settings-field">
+                    <label for="settingsCurrentPassword">Current Password (optional)</label>
+                    <input type="password" id="settingsCurrentPassword"
+                        placeholder="Enter current password to change it" autocomplete="current-password">
+                </div>
+
+                <div class="settings-field">
+                    <label for="settingsNewPassword">New Password</label>
+                    <input type="password" id="settingsNewPassword" placeholder="Minimum 6 characters"
+                        autocomplete="new-password">
+                </div>
+
+                <button type="submit" class="settings-primary-btn">
+                    Save Profile Changes
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Card 2: Productivity Preferences -->
+        <div class="settings-card">
+
+            <div class="settings-card-header">
+                <h2>Productivity Preferences</h2>
+                <p>Customize defaults for new tasks and focus timer sessions.</p>
+            </div>
+
+            <form class="settings-form" id="preferencesSettingsForm">
+
+                <div class="settings-field">
+                    <label for="prefDefaultCategory">Default Task Category</label>
+                    <select id="prefDefaultCategory">
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Study">Study</option>
+                    </select>
+                </div>
+
+                <div class="settings-field">
+                    <label for="prefDefaultPriority">Default Task Priority</label>
+                    <select id="prefDefaultPriority">
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <div class="settings-field">
+                    <label for="prefPomodoroMinutes">Default Focus Timer Duration</label>
+                    <select id="prefPomodoroMinutes">
+                        <option value="25">25 Minutes (Classic Pomodoro)</option>
+                        <option value="30">30 Minutes</option>
+                        <option value="45">45 Minutes (Deep Work)</option>
+                        <option value="50">50 Minutes</option>
+                    </select>
+                </div>
+
+                <div class="settings-toggle-row">
+                    <div>
+                        <h4>Confirm Before Deleting Tasks</h4>
+                        <p>Show a safety prompt when removing tasks.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="prefConfirmDelete" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="settings-primary-btn">
+                    Save Preferences
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Full-Width Card: Data Management -->
+    <div class="settings-card data-management-card">
+
+        <div class="data-card-top">
+            <div>
+                <h2>Data Management & Backup</h2>
+                <p>Export your tasks to JSON, restore from a backup file, or reset your workspace.</p>
+            </div>
+            <span class="storage-pill" id="settingsTaskCount">0 Tasks Stored</span>
+        </div>
+
+        <div class="data-actions-grid">
+
+            <!-- Export -->
+            <div class="data-action-box">
+                <h3>Export Backup</h3>
+                <p>Download all your tasks and completion history as a portable JSON file.</p>
+                <button type="button" class="settings-secondary-btn" id="exportTasksBtn">
+                    Export Tasks (.json)
+                </button>
+            </div>
+
+            <!-- Import -->
+            <div class="data-action-box">
+                <h3>Import Backup</h3>
+                <p>Restore tasks from a previously exported TaskNest JSON backup file.</p>
+                <input type="file" id="importTasksFileInput" accept=".json,application/json" hidden>
+                <button type="button" class="settings-secondary-btn" id="importTasksBtn">
+                    Import Tasks (.json)
+                </button>
+            </div>
+
+            <!-- Clear Data -->
+            <div class="data-action-box danger-box">
+                <h3>Clear Account Tasks</h3>
+                <p>Permanently remove all tasks stored in this account's browser storage.</p>
+                <button type="button" class="settings-danger-btn" id="clearTasksBtn">
+                    Clear All Tasks
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

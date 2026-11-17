@@ -1,0 +1,103 @@
+<!-- ========================================
+     TaskNest - Calendar Page Component
+======================================== -->
+
+<section class="calendar-page">
+
+    <!-- Page Top Bar -->
+    <div class="calendar-page-header">
+
+        <div>
+            <h1>Task <span>Calendar</span></h1>
+            <p>Visualize due dates, track priorities, and manage your daily schedule.</p>
+        </div>
+
+        <div class="calendar-header-actions">
+            <button type="button" class="calendar-today-btn" id="calendarTodayBtn">
+                Today
+            </button>
+            <button type="button" class="calendar-add-btn" id="calendarAddTaskBtn">
+                + Add Task
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- Main Two-Column Calendar Layout -->
+    <div class="calendar-workspace">
+
+        <!-- Monthly Calendar Card -->
+        <div class="calendar-board-card">
+
+            <div class="calendar-toolbar">
+
+                <div class="calendar-nav">
+                    <button type="button" class="month-nav-btn" id="prevMonthBtn" aria-label="Previous Month">
+                        &#8249;
+                    </button>
+                    <h2 id="calendarMonthYear">Month Year</h2>
+                    <button type="button" class="month-nav-btn" id="nextMonthBtn" aria-label="Next Month">
+                        &#8250;
+                    </button>
+                </div>
+
+                <div class="priority-legend">
+                    <span class="legend-item">
+                        <span class="priority-dot high"></span> High
+                    </span>
+                    <span class="legend-item">
+                        <span class="priority-dot medium"></span> Medium
+                    </span>
+                    <span class="legend-item">
+                        <span class="priority-dot low"></span> Low
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Weekday Headers -->
+            <div class="calendar-weekdays">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+
+            <!-- Dynamic Calendar Days Grid -->
+            <div class="calendar-grid" id="calendarGrid"></div>
+
+        </div>
+
+
+        <!-- Selected Date Tasks Panel -->
+        <aside class="calendar-details-card">
+
+            <div class="details-card-header">
+                <div>
+                    <p class="details-subtitle">Scheduled Tasks</p>
+                    <h2 id="selectedDateHeading">Select a date</h2>
+                </div>
+                <span class="selected-count-badge" id="selectedDateCount">0</span>
+            </div>
+
+            <div class="selected-tasks-list" id="selectedDateTasks">
+                <div class="calendar-empty-state">
+                    <p>No tasks scheduled for this date.</p>
+                </div>
+            </div>
+
+            <div class="details-card-footer">
+                <button type="button" class="manage-tasks-btn" id="calendarManageTasksBtn">
+                    Open My Tasks
+                </button>
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>

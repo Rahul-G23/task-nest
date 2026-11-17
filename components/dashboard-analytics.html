@@ -1,0 +1,198 @@
+<!-- ========================================
+     TaskNest - Dashboard Analytics
+======================================== -->
+
+<section class="analytics-section">
+
+    <!-- Productivity Analytics Card -->
+    <div class="analytics-card">
+
+        <div class="analytics-header">
+            <h2>Productivity <span>Analytics</span></h2>
+        </div>
+
+        <div class="analytics-content">
+
+            <div class="analytics-summary">
+
+                <h3>
+                    <span id="analyticsCompleted">0</span>
+                    <span class="analytics-divider">/</span>
+                    <span id="analyticsTotal">0</span>
+                </h3>
+
+                <p>Completed Tasks</p>
+
+                <div class="completion-label">
+                    <span id="completionPercentage">0%</span>
+                    <span>Completion</span>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="productivityChart"></canvas>
+            </div>
+
+        </div>
+
+        <div class="chart-days">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+        </div>
+
+
+        <!-- Weekly Productivity Summary -->
+        <div class="weekly-summary">
+
+            <div class="weekly-summary-header">
+                <h3>Weekly Summary</h3>
+                <span>This Week</span>
+            </div>
+
+            <div class="weekly-summary-grid">
+
+                <div class="weekly-stat">
+                    <p>Tasks Completed</p>
+                    <h2 id="weeklyCompleted">0</h2>
+                </div>
+
+                <div class="weekly-stat">
+                    <p>Most Productive Day</p>
+                    <h2 id="mostProductiveDay">--</h2>
+                </div>
+
+                <div class="weekly-stat">
+                    <p>Daily Average</p>
+                    <h2 id="dailyAverage">0</h2>
+                </div>
+
+                <div class="weekly-stat">
+                    <p>Previous Week</p>
+                    <h2 id="weeklyComparison">--</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Category-wise Productivity -->
+        <div class="category-analytics">
+
+            <div class="category-analytics-header">
+                <div>
+                    <h3>Category-wise Productivity</h3>
+                    <p>Completed tasks and completion rate by category</p>
+                </div>
+                <span class="top-category-badge" id="topCategoryBadge">Top: --</span>
+            </div>
+
+            <div class="category-analytics-body">
+
+                <div class="category-chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+
+                <div class="category-breakdown">
+
+                    <div class="category-item">
+                        <div class="category-item-header">
+                            <span class="category-name">
+                                <span class="category-dot work-dot"></span>
+                                Work
+                            </span>
+                            <span class="category-metrics">
+                                <span id="workCount">0 / 0</span>
+                                <strong id="workPercentage">0%</strong>
+                            </span>
+                        </div>
+                        <div class="category-progress-bar">
+                            <div class="category-progress-fill work-fill" id="workProgress"></div>
+                        </div>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-item-header">
+                            <span class="category-name">
+                                <span class="category-dot personal-dot"></span>
+                                Personal
+                            </span>
+                            <span class="category-metrics">
+                                <span id="personalCount">0 / 0</span>
+                                <strong id="personalPercentage">0%</strong>
+                            </span>
+                        </div>
+                        <div class="category-progress-bar">
+                            <div class="category-progress-fill personal-fill" id="personalProgress"></div>
+                        </div>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-item-header">
+                            <span class="category-name">
+                                <span class="category-dot study-dot"></span>
+                                Study
+                            </span>
+                            <span class="category-metrics">
+                                <span id="studyCount">0 / 0</span>
+                                <strong id="studyPercentage">0%</strong>
+                            </span>
+                        </div>
+                        <div class="category-progress-bar">
+                            <div class="category-progress-fill study-fill" id="studyProgress"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Upcoming Tasks Card -->
+    <div class="upcoming-card">
+
+        <div class="upcoming-header">
+
+            <div class="upcoming-icon">◷</div>
+
+            <div class="upcoming-heading">
+                <h3>Upcoming</h3>
+                <p>Tasks</p>
+            </div>
+
+            <div class="upcoming-divider"></div>
+
+            <div class="upcoming-date">
+                <p>Next Due</p>
+                <span id="upcomingDate">No tasks</span>
+            </div>
+
+        </div>
+
+        <div class="upcoming-task-content">
+
+            <h2 id="upcomingTaskTitle">You're all caught up!</h2>
+
+            <p id="upcomingTaskDescription">
+                Add a task to see your upcoming schedule here.
+            </p>
+
+        </div>
+
+        <button class="upcoming-button" id="upcomingViewBtn">
+            View Tasks
+        </button>
+
+    </div>
+
+</section>

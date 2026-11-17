@@ -1,0 +1,194 @@
+<!-- ========================================
+     TaskNest - Help & Documentation Page
+======================================== -->
+
+<section class="help-page">
+
+    <!-- Top Hero & Search Banner -->
+    <div class="help-hero-card">
+
+        <div class="help-hero-content">
+            <span class="help-pill">HELP CENTER & DOCUMENTATION</span>
+            <h1>How can we help you use <span>TaskNest</span>?</h1>
+            <p>Explore quick-start guides, productivity workflows, and answers to common questions about your workspace.
+            </p>
+
+            <div class="help-search-box">
+                <span class="help-search-icon">⌕</span>
+                <input type="text" id="helpSearchInput"
+                    placeholder="Search help topics (e.g. backup, calendar, password, timer)...">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Quick Start Feature Guides -->
+    <div class="help-section-header">
+        <h2>Core Feature Guides</h2>
+        <p>Everything you need to organize tasks, track deadlines, and protect your data.</p>
+    </div>
+
+    <div class="help-guides-grid" id="helpGuidesGrid">
+
+        <article class="help-guide-card" data-keywords="tasks create edit delete priority category filter status">
+            <div class="guide-badge purple">01</div>
+            <h3>Managing Tasks</h3>
+            <p>Create tasks with categories (Work, Personal, Study), priority levels, and due dates. Use status and
+                priority filters on the Tasks page to focus on what matters next.</p>
+            <a href="tasks.html" class="guide-link">Open Tasks Page →</a>
+        </article>
+
+        <article class="help-guide-card" data-keywords="calendar schedule due date monthly grid day panel">
+            <div class="guide-badge green">02</div>
+            <h3>Calendar Scheduling</h3>
+            <p>View monthly task deadlines at a glance with color-coded priority dots. Click any day to inspect
+                scheduled tasks or add a new task pre-filled for that date.</p>
+            <a href="calendar.html" class="guide-link">Open Calendar →</a>
+        </article>
+
+        <article class="help-guide-card" data-keywords="analytics charts trends completion rate timer pomodoro focus">
+            <div class="guide-badge amber">03</div>
+            <h3>Timer & Analytics</h3>
+            <p>Run focused Pomodoro work sessions from the Dashboard and track your 7-day, 8-week, and 6-month
+                completion trends on the Analytics page.</p>
+            <a href="analytics.html" class="guide-link">Open Analytics →</a>
+        </article>
+
+        <article class="help-guide-card"
+            data-keywords="settings backup export import json localstorage account isolation">
+            <div class="guide-badge purple">04</div>
+            <h3>Backups & Data Safety</h3>
+            <p>Each account keeps its tasks isolated in browser storage. Export a portable JSON backup anytime in
+                Settings or restore your tasks on another browser.</p>
+            <a href="settings.html" class="guide-link">Open Settings →</a>
+        </article>
+
+    </div>
+
+
+    <!-- Bottom Section: FAQ Accordion & Shortcuts -->
+    <div class="help-bottom-grid">
+
+        <!-- Left: Expandable FAQs -->
+        <div class="help-panel-card">
+
+            <div class="help-panel-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Click any question below to view the answer.</p>
+            </div>
+
+            <div class="faq-list" id="helpFaqList">
+
+                <div class="faq-item active" data-keywords="where stored localstorage offline privacy">
+                    <button type="button" class="faq-question">
+                        <span>Where is my TaskNest data stored?</span>
+                        <span class="faq-icon">−</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All accounts, preferences, and tasks are stored locally in your browser's
+                            <strong>LocalStorage</strong>. Your data stays private on your device and works completely
+                            offline without requiring an external database.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-keywords="multiple accounts separate tasks isolation email">
+                    <button type="button" class="faq-question">
+                        <span>Do different user accounts share the same tasks?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. TaskNest isolates tasks and preferences using each account's email address, so signing in
+                            with a different account loads a completely separate workspace.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-keywords="backup export import transfer computer browser json">
+                    <button type="button" class="faq-question">
+                        <span>How do I move my tasks to another browser or computer?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to <strong>Settings → Data Management &amp; Backup</strong> and click <strong>Export Tasks
+                                (.json)</strong>. On your other browser, sign in and click <strong>Import Tasks
+                                (.json)</strong> to restore your full task list.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-keywords="clear browser cache delete data warning">
+                    <button type="button" class="faq-question">
+                        <span>What happens if I clear my browser site data?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Clearing browser site data or LocalStorage removes locally stored accounts and tasks.
+                            Downloading a regular JSON backup from Settings ensures you can always restore your work.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-keywords="change name password profile security">
+                    <button type="button" class="faq-question">
+                        <span>Can I update my display name or password?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Open <strong>Settings</strong>, update your display name or enter your current and new
+                            password under <strong>Profile &amp; Security</strong>, and click <strong>Save Profile
+                                Changes</strong>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="help-empty-state hidden" id="helpEmptyState">
+                <p>No matching help topics found. Try searching for "tasks", "calendar", "backup", or "account".</p>
+            </div>
+
+        </div>
+
+
+        <!-- Right: Shortcuts & Workspace Tips -->
+        <div class="help-panel-card shortcuts-card">
+
+            <div class="help-panel-header">
+                <h2>Shortcuts &amp; Quick Tips</h2>
+                <p>Speed up your daily workflow inside TaskNest.</p>
+            </div>
+
+            <div class="shortcut-list">
+
+                <div class="shortcut-row">
+                    <span class="shortcut-desc">Close any open task modal</span>
+                    <kbd class="shortcut-key">Esc</kbd>
+                </div>
+
+                <div class="shortcut-row">
+                    <span class="shortcut-desc">Save task or login form</span>
+                    <kbd class="shortcut-key">Enter</kbd>
+                </div>
+
+                <div class="shortcut-row">
+                    <span class="shortcut-desc">Jump to today on Calendar</span>
+                    <span class="shortcut-tag">Today Button</span>
+                </div>
+
+                <div class="shortcut-row">
+                    <span class="shortcut-desc">Switch trend timeframes</span>
+                    <span class="shortcut-tag">7D / 8W / 6M</span>
+                </div>
+
+            </div>
+
+            <div class="help-tip-callout">
+                <h4>Pro Tip: Weekly Backups</h4>
+                <p>Export a JSON backup once a week from Settings so you always have a snapshot of your completed
+                    milestones.</p>
+                <a href="settings.html" class="help-callout-btn">Go to Backup Settings</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

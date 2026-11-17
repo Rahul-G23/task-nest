@@ -1,0 +1,133 @@
+<!-- ========================================
+     TaskNest - Dedicated Analytics Page
+======================================== -->
+
+<section class="analytics-deep-page">
+
+    <!-- Page Top Bar -->
+    <div class="analytics-page-header">
+
+        <div>
+            <h1>Productivity <span>Insights</span></h1>
+            <p>Deep-dive into your completion trends, priority distribution, and long-term work habits.</p>
+        </div>
+
+        <button type="button" class="analytics-add-btn" id="analyticsAddTaskBtn">
+            + Add Task
+        </button>
+
+    </div>
+
+
+    <!-- 4 Deep-Dive KPI Cards -->
+    <div class="analytics-kpi-grid">
+
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-label">Completion Rate</span>
+                <span class="kpi-badge purple">All Time</span>
+            </div>
+            <h2 id="kpiCompletionRate">0%</h2>
+            <p class="kpi-subtext" id="kpiCompletionSub">0 of 0 tasks completed</p>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-label">On-Time Delivery</span>
+                <span class="kpi-badge green">Punctuality</span>
+            </div>
+            <h2 id="kpiOnTimeRate">--</h2>
+            <p class="kpi-subtext" id="kpiOnTimeSub">Based on tasks with due dates</p>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-label">Active Backlog</span>
+                <span class="kpi-badge amber">Pending</span>
+            </div>
+            <h2 id="kpiActiveBacklog">0</h2>
+            <p class="kpi-subtext" id="kpiOverdueSub">0 overdue tasks</p>
+        </div>
+
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-label">Most Productive Day</span>
+                <span class="kpi-badge purple">Habit</span>
+            </div>
+            <h2 id="kpiPeakWeekday">--</h2>
+            <p class="kpi-subtext" id="kpiPeakWeekdaySub">Highest all-time completions</p>
+        </div>
+
+    </div>
+
+
+    <!-- Multi-Period Completion Trends Card -->
+    <div class="analytics-panel-card trend-chart-card">
+
+        <div class="panel-card-header">
+
+            <div>
+                <h2>Completion Trends</h2>
+                <p id="trendSubtitle">Daily completed tasks over the last 7 days</p>
+            </div>
+
+            <div class="trend-switcher" role="group" aria-label="Trend Timeframe">
+                <button type="button" class="trend-tab active" data-range="daily">
+                    7 Days
+                </button>
+                <button type="button" class="trend-tab" data-range="weekly">
+                    8 Weeks
+                </button>
+                <button type="button" class="trend-tab" data-range="monthly">
+                    6 Months
+                </button>
+            </div>
+
+        </div>
+
+        <div class="trend-canvas-wrap">
+            <canvas id="trendChart"></canvas>
+        </div>
+
+    </div>
+
+
+    <!-- Priority & Category Breakdown Row -->
+    <div class="analytics-charts-row">
+
+        <!-- Priority-wise Performance -->
+        <div class="analytics-panel-card">
+
+            <div class="panel-card-header">
+                <div>
+                    <h2>Priority Breakdown</h2>
+                    <p>Completed vs. pending tasks by priority level</p>
+                </div>
+            </div>
+
+            <div class="breakdown-canvas-wrap">
+                <canvas id="priorityChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- Category Completed vs Pending -->
+        <div class="analytics-panel-card">
+
+            <div class="panel-card-header">
+                <div>
+                    <h2>Category Workload</h2>
+                    <p>Completed vs. pending tasks across categories</p>
+                </div>
+            </div>
+
+            <div class="breakdown-canvas-wrap">
+                <canvas id="categoryStatusChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
